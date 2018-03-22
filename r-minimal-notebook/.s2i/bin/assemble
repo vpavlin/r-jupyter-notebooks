@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -x
+
+set -eo pipefail
+
+# Execute original assemble script.
+
+/opt/app-root/builder/assemble
+
+echo $R_LIBS
+mkdir -p $R_LIBS
+
+echo "----> Installing R dependencies"
+Rscript -e "install.packages(c('pbdZMQ', 'repr', 'devtools'), repos='http://cran.r-project.org', lib='${R_LIBS}')"
+Rscript -e "devtools::install_github('IRkernel/IRkernel')"
+Rscript -e "IRkernel::installspec()"
+
+# Fix up permissions.
+
+fix-permissions /opt/app-root
