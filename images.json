@@ -38,7 +38,7 @@
                 "source": {
                     "type": "Git",
                     "git": {
-                        "uri": "https://github.com/vpavlin/jupyter-notebooks"
+                        "uri": "https://github.com/vpavlin/r-jupyter-notebooks"
                     },
                     "contextDir": "minimal-notebook"
                 },
@@ -100,7 +100,7 @@
                 "source": {
                     "type": "Git",
                     "git": {
-                        "uri": "https://github.com/vpavlin/jupyter-notebooks"
+                        "uri": "https://github.com/vpavlin/r-jupyter-notebooks"
                     },
                     "contextDir": "r-minimal-notebook"
                 },
