@@ -14,8 +14,9 @@ mkdir -p $R_LIBS
 echo "----> Installing R dependencies"
 Rscript -e "install.packages(c('pbdZMQ', 'repr', 'devtools'), repos='http://cran.r-project.org')"
 Rscript -e "devtools::install_github('IRkernel/IRkernel')"
-Rscript -e "IRkernel::installspec()"
-ls /opt/app-root/src/.local/share/jupyter/kernels/ir
+Rscript -e "IRkernel::installspec(prefix='/opt/app-root/')"
+ls /opt/app-root/share/jupyter/kernels/
+
 
 # Fix up permissions.
 
